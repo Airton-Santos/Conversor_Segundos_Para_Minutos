@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+    <h1>CONVERSOR</h1>
+        <div class="for">
+            <div class="content">
+                <form>
+                    <p class="parag">SEGUNDOS</p>
+                    <input type="number" id="segundos" placeholder="Quantos Segundos?" class="in"><br><br>
+                    <input type="submit" value="converter" class="sub">
+                    <h3></h3>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var frm, resp
+
+        frm = document.querySelector("form")
+        resp = document.querySelector("h3")
+
+        frm.addEventListener("submit", (e) => {
+            e.preventDefault()
+            var segundos, minutos, segsRestos
+
+            segundos = (frm.segundos.value)
+            minutos = Math.floor(segundos / 60) 
+            segsRestos = segundos % 60
+            resp.textContent = "Seu tempo foi de " + minutos + " minutos(s) " + " e " + segsRestos + " segundos(s)"
+            
+        })
+    </script>
+</body>
+</html>
